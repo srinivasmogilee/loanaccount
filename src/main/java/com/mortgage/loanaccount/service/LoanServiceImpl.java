@@ -15,6 +15,15 @@ public  class LoanServiceImpl implements LoanService{
 
 	@Autowired
 	private LoanRepository loanRepository;
+	
+	/****************************************************************************************************************************
+	 - Method Name      : upDateEmi
+	 - Input Parameters : loanaccount
+	 - Return type      : updatedEmi
+	 - Author           : Srinivas Thippakkagari
+	 - Creation Date    : 06-03-2022
+	 - Description      : Updating emi details into  the database.
+	  ****************************************************************************************************************************/ 
 
 	@Override
 	public LoanAccount updateEmi(LoanAccount loanaccount) throws LoanAccountNotFoundException{
@@ -30,6 +39,16 @@ public  class LoanServiceImpl implements LoanService{
 		return updatedEmi;
 	}
 
+	/****************************************************************************************************************************
+	 - Method Name      : addEmi
+	 - Input Parameters : loanAccount
+	 - Return type      : savededEmi
+	 - Author           : Srinivas Thippakkagari
+	 - Creation Date    : 06-03-2022
+	 - Description      : adding emi details into  the database.
+	  ****************************************************************************************************************************/ 
+
+	
 	@Override
 	public LoanAccount addEmi(LoanAccount loanAccount) {
 
@@ -40,6 +59,16 @@ public  class LoanServiceImpl implements LoanService{
 	
 	}
 
+	/****************************************************************************************************************************
+	 - Method Name      : addInterest
+	 - Input Parameters : loanAccount
+	 - Return type      : savedInterest
+	 - Author           : Srinivas Thippakkagari
+	 - Creation Date    : 06-03-2022
+	 - Description      : Adding Interest details into  the database.
+	  ****************************************************************************************************************************/ 
+
+	
 	@Override
 	public LoanAccount addInterest(LoanAccount loanAccount) {
 
@@ -50,6 +79,16 @@ public  class LoanServiceImpl implements LoanService{
 	
 	}
 
+	/****************************************************************************************************************************
+	 - Method Name      : upDateInterest
+	 - Input Parameters : loanAccount
+	 - Return type      : updated
+	 - Author           : Srinivas Thippakkagari
+	 - Creation Date    : 06-03-2022
+	 - Description      : Update Interest details into  the database.
+	  ****************************************************************************************************************************/ 
+
+	
 	@Override
 	public LoanAccount updateInterest(LoanAccount loanAccount) throws CustomerNotFoundException {
 		
@@ -59,9 +98,9 @@ public  class LoanServiceImpl implements LoanService{
 			throw new CustomerNotFoundException("Sorry! customer is not existing with id: "+loanAccount.getCustomerId());
 		}
 		
-		LoanAccount updatedProduct = loanRepository.save(loanAccount);
+		LoanAccount updatedInterest = loanRepository.save(loanAccount);
 		
-		return updatedProduct;
+		return updatedInterest;
 	}
 		
 	
